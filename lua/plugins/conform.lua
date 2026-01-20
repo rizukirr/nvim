@@ -18,6 +18,7 @@ return {
             c = { "clang_format" },
             cpp = { "clang_format" },
             sh = { "shfmt" },
+            dart = { "dart_format" },
             bash = { "shfmt" },
             json = { "prettier" },
             yaml = { "prettier" },

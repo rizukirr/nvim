@@ -38,8 +38,8 @@ return {
                     require("dap").configurations.dart = {}
                 end,
             },
-            flutter_path = "/usr/lib/flutter",
-            fvm = true, -- Enable FVM support
+            flutter_path = vim.fn.expand("$HOME/Flutter/flutter"),
+            fvm = false, -- Disabled - not using FVM
             widget_guides = {
                 enabled = true,
             },
@@ -62,15 +62,9 @@ return {
             },
             lsp = {
                 color = {
-                    enabled = true,
-                    background = false,
-                    background_color = nil,
-                    foreground = false,
-                    virtual_text = true,
-                    virtual_text_str = "■",
+                    enabled = false,
                 },
-                -- Explicitly use FVM dart binary
-                cmd = { vim.fn.expand("~/fvm/default/bin/dart"), "language-server", "--protocol=lsp" },
+                cmd = { vim.fn.expand("$HOME/Flutter/flutter/bin/dart"), "language-server", "--protocol=lsp" },
                 on_attach = function(_, bufnr)
                     -- LSP keybindings (following standard LSP conventions)
                     local opts = { buffer = bufnr, silent = true }
@@ -90,7 +84,6 @@ return {
                     completeFunctionCalls = true,
                     analysisExcludedFolders = {
                         vim.fn.expand("$HOME/.pub-cache"),
-                        vim.fn.expand("$HOME/fvm"),
                     },
                     renameFilesWithClasses = "prompt",
                     enableSnippets = true,
