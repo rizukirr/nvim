@@ -77,17 +77,12 @@ keymap.set("v", ">", ">gv")
 
 -- Snacks keymaps are now defined in the plugin configuration
 
--- LSP
-keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Goto Definition" })
+-- LSP (using Telescope - see plugins/telescope.lua)
+-- keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { desc = "Goto Definition" })
+-- keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", { desc = "Goto References" })
+-- keymap.set("n", "gI", function() vim.lsp.buf.implementation() end, { desc = "Goto Implementation" })
+-- keymap.set("n", "gy", function() vim.lsp.buf.type_definition() end, { desc = "Goto Type Definition" })
 keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", { desc = "Goto Declaration" })
-keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", { desc = "Goto References" })
-keymap.set("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<cr>", { desc = "Goto Implementation" })
-keymap.set(
-    "n",
-    "gt",
-    "<cmd>lua vim.lsp.buf.type_definition()<cr>",
-    { desc = "Goto Type Definition" }
-)
 keymap.set("n", "<leader>k", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Hover" })
 keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Code Action" })
 keymap.set("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename" })
@@ -96,6 +91,9 @@ keymap.set("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format()<cr>", { desc = "For
 -- Diagnostics
 keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Next Diagnostic" })
 keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Prev Diagnostic" })
+
+-- Quickfix
+keymap.set("n", "<leader>q", "<cmd>cclose<cr>", { desc = "Close Quickfix" })
 
 -- Terminal toggle
 local terminal = {

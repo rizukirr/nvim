@@ -84,6 +84,11 @@ return {
         { "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Telescope help tags" },
         { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
         { "<leader>fD", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Buffer Diagnostics" },
+        -- LSP
+        { "gd", function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end, desc = "Goto Definition" },
+        { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
+        { "gI", function() require("telescope.builtin").lsp_implementations({ reuse_win = true }) end, desc = "Goto Implementation" },
+        { "gy", function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end, desc = "Goto T[y]pe Definition" },
         -- git
         { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "Commits" },
         { "<leader>gl", "<cmd>Telescope git_commits<CR>", desc = "Commits" },
