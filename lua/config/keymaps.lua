@@ -6,10 +6,10 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Move lines
-vim.keymap.set("i", "<C-k>", ":m '>+1<CR>gv=gv", { desc = "Move Up" })
-vim.keymap.set("i", "<C-j>", ":m '>+1<CR>gv=gv", { desc = "Move Down" })
-vim.keymap.set({ "v", "n" }, "J", ":m '>+1<CR>gv=gv", { desc = "Move Down" })
-vim.keymap.set({ "v", "n" }, "K", ":m '<-2<CR>gv=gv", { desc = "Move Up" })
+vim.keymap.set("n", "J", ":m .+1<CR>==", { desc = "Move line down" })
+vim.keymap.set("n", "K", ":m .-2<CR>==", { desc = "Move line up" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move Up" })
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move Down" })
 
 -- File Explorer
 -- keymap.set("n", "<leader>e", "<cmd>Ex<cr>", { desc = "Open File Explorer" })
