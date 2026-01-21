@@ -17,11 +17,12 @@ return {
             { "<leader>g", group = "git" },
             { "<leader>gh", group = "hunks" },
             { "<leader>m", group = "man" },
-            { "<leader>q", group = "quit/session" },
             { "<leader>s", group = "search" },
             { "<leader>u", group = "ui" },
             { "<leader>x", group = "diagnostics/quickfix" },
             { "<leader>t", group = "Terminal" },
+
+            { "q", group = "quit/session" },
 
             -- Bracket navigation
             { "[", group = "prev" },

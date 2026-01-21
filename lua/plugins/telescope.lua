@@ -73,6 +73,16 @@ return {
                     find_command = find_command,
                     hidden = true,
                 },
+                buffers = {
+                    mappings = {
+                        i = {
+                            ["<C-d>"] = actions.delete_buffer,
+                        },
+                        n = {
+                            ["dd"] = actions.delete_buffer,
+                        },
+                    },
+                },
             },
         })
         pcall(require("telescope").load_extension, "fzf")
