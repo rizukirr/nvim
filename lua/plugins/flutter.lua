@@ -38,7 +38,7 @@ return {
                     require("dap").configurations.dart = {}
                 end,
             },
-            flutter_path = vim.fn.expand("$HOME/Flutter/flutter"),
+            flutter_path = vim.fn.expand("$HOME/Flutter/flutter/bin/flutter"),
             fvm = false, -- Disabled - not using FVM
             widget_guides = {
                 enabled = true,
