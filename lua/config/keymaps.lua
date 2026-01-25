@@ -61,7 +61,7 @@ keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 keymap.set("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 keymap.set("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 keymap.set("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-keymap.set("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete Current Buffer" })
+keymap.set("n", "<leader>bd", "<cmd>wa<cr><cmd>bdelete<cr>", { desc = "Delete Current Buffer" })
 keymap.set(
     "n",
     "<leader>ba",
@@ -110,7 +110,7 @@ keymap.set("n", "<C-k>", function()
 end, { desc = "Show Diagnostic Float" })
 
 -- Quickfix
-keymap.set("n", "q", "<cmd>cclose<cr>", { desc = "Close Quickfix" })
+keymap.set("n", "<leader>q", "<cmd>cclose<cr>", { desc = "Close Quickfix" })
 
 -- Terminal toggle
 local terminal = {
