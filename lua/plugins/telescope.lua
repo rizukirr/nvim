@@ -25,11 +25,11 @@ return {
         require("telescope").setup({
             defaults = {
                 prompt_prefix = " ",
-                selection_caret = " ",
-                layout_strategy = "horizontal",
+                selection_caret = "> ",
+                layout_strategy = "vertical",
                 layout_config = {
-                    horizontal = {
-                        prompt_position = "top",
+                    vertical = {
+                        prompt_position = "bottom",
                     },
                 },
                 sorting_strategy = "ascending",
@@ -95,10 +95,28 @@ return {
         { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
         { "<leader>fD", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Buffer Diagnostics" },
         -- LSP
-        { "gd", function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end, desc = "Goto Definition" },
+        {
+            "gd",
+            function()
+                require("telescope.builtin").lsp_definitions({ reuse_win = true })
+            end,
+            desc = "Goto Definition",
+        },
         { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
-        { "gI", function() require("telescope.builtin").lsp_implementations({ reuse_win = true }) end, desc = "Goto Implementation" },
-        { "gy", function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end, desc = "Goto T[y]pe Definition" },
+        {
+            "gI",
+            function()
+                require("telescope.builtin").lsp_implementations({ reuse_win = true })
+            end,
+            desc = "Goto Implementation",
+        },
+        {
+            "gy",
+            function()
+                require("telescope.builtin").lsp_type_definitions({ reuse_win = true })
+            end,
+            desc = "Goto T[y]pe Definition",
+        },
         -- git
         { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "Commits" },
         { "<leader>gl", "<cmd>Telescope git_commits<CR>", desc = "Commits" },
