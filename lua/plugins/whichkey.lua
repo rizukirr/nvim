@@ -9,20 +9,18 @@ return {
             mode = { "n", "x" },
             -- Leader groups
             { "<leader><tab>", group = "tabs" },
-            { "<leader>a", group = "app/flutter" },
+            { "<leader>a", group = "app/flutter", icon = "" },
+            { "<leader>b", group = "buffer" },
             { "<leader>c", group = "code" },
             { "<leader>d", group = "debug" },
-            { "<leader>dp", group = "profiler" },
             { "<leader>f", group = "file/find" },
-            { "<leader>g", group = "git" },
-            { "<leader>gh", group = "hunks" },
-            { "<leader>m", group = "man" },
+            { "<leader>g", group = "git", icon = "" },
+            { "<leader>l", group = "lazy", icon = "󰒲 " },
+            { "<leader>p", group = "profiler", icon = "" },
             { "<leader>s", group = "search" },
-            { "<leader>u", group = "ui" },
+            { "<leader>t", group = "terminal" },
+            { "<leader>u", group = "ui/toggle" },
             { "<leader>x", group = "diagnostics/quickfix" },
-            { "<leader>t", group = "Terminal" },
-
-            { "q", group = "quit/session" },
 
             -- Bracket navigation
             { "[", group = "prev" },
@@ -30,19 +28,11 @@ return {
 
             -- Goto prefix
             { "g", group = "goto" },
+            { "ga", group = "calls" },
             { "gs", group = "surround" },
 
             -- Other groups
             { "z", group = "fold" },
-
-            -- Buffer group with expand
-            {
-                "<leader>b",
-                group = "buffer",
-                expand = function()
-                    return require("which-key.extras").expand.buf()
-                end,
-            },
 
             -- Windows group with proxy
             {
@@ -56,9 +46,6 @@ return {
 
             -- Better descriptions for built-in keys
             { "gx", desc = "Open with system app" },
-
-            -- Hidden/less common
-            { "<leader>l", group = "lazy", icon = "󰒲 " },
         },
     },
     keys = {

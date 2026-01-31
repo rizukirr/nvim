@@ -17,7 +17,6 @@ return {
     opts = {
         servers = {
             lua_ls = {},
-            dartls = {},
             clangd = {
                 root_markers = {
                     "compile_commands.json",
@@ -54,6 +53,7 @@ return {
             bashls = {},
             marksman = {},
             dartls = {},
+            kotlin_lsp = {},
             neocmake = {},
         },
         setup = {

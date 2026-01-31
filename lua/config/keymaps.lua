@@ -61,7 +61,7 @@ keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 keymap.set("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 keymap.set("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 keymap.set("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-keymap.set("n", "<leader>bd", "<cmd>wa<cr><cmd>bdelete<cr>", { desc = "Delete Current Buffer" })
+keymap.set("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete Current Buffer" })
 keymap.set(
     "n",
     "<leader>ba",
@@ -81,15 +81,17 @@ keymap.set("v", ">", ">gv")
 
 -- Snacks keymaps are now defined in the plugin configuration
 
--- LSP (using Telescope - see plugins/telescope.lua)
+-- LSP (using Telescope - see plugins/snacks.lua)
 -- keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { desc = "Goto Definition" })
 -- keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", { desc = "Goto References" })
 -- keymap.set("n", "gI", function() vim.lsp.buf.implementation() end, { desc = "Goto Implementation" })
 -- keymap.set("n", "gy", function() vim.lsp.buf.type_definition() end, { desc = "Goto Type Definition" })
-keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", { desc = "Goto Declaration" })
-keymap.set("n", "gs", function()
-    vim.lsp.buf.typehierarchy("supertypes")
-end, { desc = "Goto Super Types (Interface/Parent)" })
+-- keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", { desc = "Goto Declaration" })
+--
+-- keymap.set("n", "gs", function()
+--     vim.lsp.buf.typehierarchy("supertypes")
+-- end, { desc = "Goto Super Types (Interface/Parent)" })
+
 keymap.set("n", "<leader>k", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Hover" })
 keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Code Action" })
 keymap.set("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename" })
