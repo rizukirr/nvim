@@ -119,7 +119,7 @@ return {
             desc = "Git Stash",
         },
         {
-            "<leader>gd",
+            "<leader>gD",
             function()
                 Snacks.picker.git_diff()
             end,
@@ -332,13 +332,6 @@ return {
             desc = "Find Files",
         },
         {
-            "<leader>fg",
-            function()
-                Snacks.picker.git_files()
-            end,
-            desc = "Find Git Files",
-        },
-        {
             "<leader>fp",
             function()
                 Snacks.picker.projects()
@@ -368,7 +361,7 @@ return {
             desc = "Grep Open Buffers",
         },
         {
-            "<leader>sg",
+            "<leader>fg",
             function()
                 Snacks.picker.grep()
             end,

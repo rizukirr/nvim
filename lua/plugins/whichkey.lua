@@ -21,6 +21,7 @@ return {
             { "<leader>t", group = "terminal" },
             { "<leader>u", group = "ui/toggle" },
             { "<leader>x", group = "diagnostics/quickfix" },
+            { "<leader>m", group = "markdown" },
 
             -- Bracket navigation
             { "[", group = "prev" },

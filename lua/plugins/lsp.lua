@@ -53,7 +53,12 @@ return {
             bashls = {},
             marksman = {},
             dartls = {},
-            kotlin_lsp = {},
+            kotlin_lsp = {
+                cmd = { "kotlin-lsp", "--stdio" },
+                single_file_support = true,
+                filetypes = { "kotlin" },
+                root_markers = { "build.gradle", "build.gradle.kts", "pom.xml" },
+            },
             neocmake = {},
         },
         setup = {
@@ -88,6 +93,7 @@ return {
                 "bashls",
                 "marksman",
                 "neocmake",
+                -- kotlin_lsp is excluded here as we use system-installed version
             },
             automatic_installation = true,
             automatic_enable = false, -- Disable automatic enabling to use manual control
