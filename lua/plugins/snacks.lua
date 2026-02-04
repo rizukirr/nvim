@@ -15,7 +15,18 @@ return {
         picker = {
             enabled = true,
             sources = {
-                explorer = {},
+                explorer = {
+                    ignored = true,
+                    hidden = true,
+                },
+                grep = {
+                    hidden = true,
+                    ignored = true,
+                },
+                files = {
+                    hidden = true,
+                    ignored = true,
+                },
             },
         },
         dashboard = {
