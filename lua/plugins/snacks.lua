@@ -16,16 +16,13 @@ return {
             enabled = true,
             sources = {
                 explorer = {
-                    ignored = true,
                     hidden = true,
                 },
                 grep = {
                     hidden = true,
-                    ignored = true,
                 },
                 files = {
                     hidden = true,
-                    ignored = true,
                 },
             },
         },
@@ -146,7 +143,7 @@ return {
         { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
         { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
         { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
-        { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
+        { "\\", function() Snacks.explorer() end, desc = "File Explorer" },
         { "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit" },
         { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
         { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
