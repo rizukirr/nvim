@@ -23,6 +23,7 @@ return {
             json = { "prettier" },
             yaml = { "prettier" },
             toml = { "taplo" },
+            go = { "gofmt" },
         },
         formatters = {
             clang_format = {

@@ -53,7 +53,9 @@ return {
             bashls = {},
             marksman = {},
             dartls = {},
+            gopls = {},
             neocmake = {},
+            rust_analyzer = { enabled = false },
         },
         setup = {
             clangd = function(_, opts)
@@ -87,6 +89,7 @@ return {
                 "bashls",
                 "marksman",
                 "neocmake",
+                "gopls",
                 -- kotlin_lsp is excluded here as we use system-installed version
             },
             automatic_installation = true,
