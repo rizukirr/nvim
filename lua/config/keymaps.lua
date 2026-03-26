@@ -5,12 +5,6 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Move lines
-vim.keymap.set("n", "J", ":m .+1<CR>==", { desc = "Move line down" })
-vim.keymap.set("n", "K", ":m .-2<CR>==", { desc = "Move line up" })
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move Up" })
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move Down" })
-
 -- File Explorer
 -- keymap.set("n", "<leader>e", "<cmd>Ex<cr>", { desc = "Open File Explorer" })
 
@@ -79,18 +73,7 @@ keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save Fi
 keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
 
--- Snacks keymaps are now defined in the plugin configuration
-
--- LSP (using Telescope - see plugins/snacks.lua)
--- keymap.set("n", "gd", function() vim.lsp.buf.definition() end, { desc = "Goto Definition" })
--- keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", { desc = "Goto References" })
--- keymap.set("n", "gI", function() vim.lsp.buf.implementation() end, { desc = "Goto Implementation" })
--- keymap.set("n", "gy", function() vim.lsp.buf.type_definition() end, { desc = "Goto Type Definition" })
--- keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", { desc = "Goto Declaration" })
---
--- keymap.set("n", "gs", function()
---     vim.lsp.buf.typehierarchy("supertypes")
--- end, { desc = "Goto Super Types (Interface/Parent)" })
+-- LSP keymaps using Telescope are defined in plugins/telescope.lua
 
 keymap.set("n", "<leader>k", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Hover" })
 keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Code Action" })
@@ -100,7 +83,8 @@ keymap.set("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format()<cr>", { desc = "For
 -- Diagnostics
 keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Next Diagnostic" })
 keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Prev Diagnostic" })
-keymap.set("n", "<C-k>", function()
+
+keymap.set("n", "<leader>dk", function()
     vim.diagnostic.open_float(nil, {
         focusable = false,
         close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
