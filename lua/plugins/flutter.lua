@@ -8,7 +8,7 @@ return {
             vim.g.dart_style_guide = 2
         end,
         keys = {
-            { "<leader>cf", "<cmd>DartFmt<cr>", desc = "Dart: Format" },
+            { "<leader>df", "<cmd>DartFmt<cr>", desc = "Dart: Format" },
         },
     },
     {
@@ -65,7 +65,7 @@ return {
                     enabled = false,
                 },
                 cmd = {
-                    vim.fn.expand("$HOME/flutter/bin/dart"),
+                    vim.fn.expand("$HOME/Flutter/flutter/bin/dart"),
                     "language-server",
                     "--protocol=lsp",
                 },

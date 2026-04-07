@@ -2,7 +2,13 @@ return {
     "stevearc/oil.nvim",
     ---@module 'oil'
     ---@type oil.SetupOpts
-    opts = {},
+    opts = {
+        keymaps = {
+            ["sh"] = { "actions.select", opts = { horizontal = true } },
+            ["sv"] = { "actions.select", opts = { vertical = true } },
+            ["\\"] = { "actions.open_cwd", mode = "n" },
+        },
+    },
     keys = {
         -- stylua: ignore 
         { "<leader>e", ":Oil<CR>", desc = "Open Oil" },

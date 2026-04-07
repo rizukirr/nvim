@@ -52,7 +52,6 @@ return {
             },
             bashls = {},
             marksman = {},
-            dartls = {},
             gopls = {},
             neocmake = {},
             rust_analyzer = { enabled = false },
