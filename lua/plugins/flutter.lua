@@ -3,7 +3,7 @@ return {
         "dart-lang/dart-vim-plugin",
         ft = { "dart" },
         init = function()
-            vim.g.dart_format_on_save = true
+            vim.g.dart_format_on_save = false
             vim.g.dart_html_in_string = true
             vim.g.dart_style_guide = 2
         end,
