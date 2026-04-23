@@ -2,3 +2,6 @@ lazy-lock.json
 AGENTS.md
 .omc/
 **/.omc/
+/.codex
+/.omx
+/nvim.log
