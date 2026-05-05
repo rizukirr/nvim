@@ -21,21 +21,33 @@ return {
                 },
             },
         })
-        telescope.load_extension("fzf")
+        pcall(telescope.load_extension, "fzf")
     end,
     keys = {
         -- Find
         { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
         { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
         { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
-        { "<leader>fc", function() require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
+        {
+            "<leader>fc",
+            function()
+                require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
+            end,
+            desc = "Find Config File",
+        },
         { "<leader><space>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
         { "<leader>,", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
 
         -- Grep
         { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
         { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
-        { "<leader>sw", "<cmd>Telescope grep_string<cr>", desc = "Grep Word Under Cursor", mode = { "n", "x" } },
+        { "<leader>ft", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme" },
+        {
+            "<leader>sw",
+            "<cmd>Telescope grep_string<cr>",
+            desc = "Grep Word Under Cursor",
+            mode = { "n", "x" },
+        },
         { "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer Lines" },
 
         -- Search
@@ -63,7 +75,11 @@ return {
         { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
         { "gI", "<cmd>Telescope lsp_implementations<cr>", desc = "Goto Implementation" },
         { "<leader>ss", "<cmd>Telescope lsp_document_symbols<cr>", desc = "LSP Document Symbols" },
-        { "<leader>sS", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "LSP Workspace Symbols" },
+        {
+            "<leader>sS",
+            "<cmd>Telescope lsp_workspace_symbols<cr>",
+            desc = "LSP Workspace Symbols",
+        },
 
         -- Git
         { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Git Branches" },
