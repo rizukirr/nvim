@@ -49,3 +49,13 @@ opt.timeoutlen = 300
 
 -- C/C++ specific
 vim.g.c_syntax_for_h = 1
+
+-- -- Override CursorLine so the cursor stays readable on darkblue
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--     callback = function()
+--         vim.api.nvim_set_hl(0, "CursorLine", { bg = "#1c1c3a" })
+--         vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffd700", bold = true })
+--     end,
+-- })
+-- vim.api.nvim_set_hl(0, "CursorLine", { bg = "#1c1c3a" })
+-- vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffd700", bold = true })
