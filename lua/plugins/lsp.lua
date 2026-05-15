@@ -65,6 +65,9 @@ return {
             },
             ruff_lsp = {},
             pyright = {},
+            asm_lsp = {
+                filetypes = { "asm", "vmasm", "s", "S" },
+            },
         },
         setup = {
             clangd = function(_, opts)
@@ -100,6 +103,7 @@ return {
                 "neocmake",
                 "gopls",
                 "pyright",
+                "asm_lsp",
                 -- kotlin_lsp is excluded here as we use system-installed version
             },
             automatic_installation = true,

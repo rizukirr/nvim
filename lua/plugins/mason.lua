@@ -21,6 +21,8 @@ return {
                 "jsonlint",
                 "yamllint",
                 "taplo",
+                -- Assembly
+                "asm-lsp",
                 -- Debug adapters
                 "codelldb",
                 "debugpy",
