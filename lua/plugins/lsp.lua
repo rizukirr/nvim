@@ -55,6 +55,16 @@ return {
             gopls = {},
             neocmake = {},
             rust_analyzer = { enabled = false },
+            ruff = {
+                cmd_env = { RUFF_TRACE = "messages" },
+                init_options = {
+                    settings = {
+                        logLevel = "error",
+                    },
+                },
+            },
+            ruff_lsp = {},
+            pyright = {},
         },
         setup = {
             clangd = function(_, opts)
@@ -89,15 +99,12 @@ return {
                 "marksman",
                 "neocmake",
                 "gopls",
+                "pyright",
                 -- kotlin_lsp is excluded here as we use system-installed version
             },
             automatic_installation = true,
             automatic_enable = false, -- Disable automatic enabling to use manual control
         })
-
-        -- Get the list of Mason-installed servers
-        local mason_lspconfig = require("mason-lspconfig")
-        local installed_servers = mason_lspconfig.get_installed_servers()
 
         -- Configure and enable all servers (both Mason and non-Mason)
         for server_name, server_config in pairs(opts.servers) do

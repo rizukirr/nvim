@@ -61,9 +61,6 @@ return {
                 auto_open = false,
             },
             lsp = {
-                color = {
-                    enabled = false,
-                },
                 cmd = {
                     vim.fn.expand("$HOME/Flutter/flutter/bin/dart"),
                     "language-server",

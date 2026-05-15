@@ -81,8 +81,12 @@ keymap.set("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Ren
 keymap.set("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format()<cr>", { desc = "Format" })
 
 -- Diagnostics
-keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Next Diagnostic" })
-keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Prev Diagnostic" })
+keymap.set("n", "]d", function()
+    vim.diagnostic.jump({ count = 1, on_jump = function() vim.diagnostic.open_float() end })
+end, { desc = "Next Diagnostic" })
+keymap.set("n", "[d", function()
+    vim.diagnostic.jump({ count = -1, on_jump = function() vim.diagnostic.open_float() end })
+end, { desc = "Prev Diagnostic" })
 
 keymap.set("n", "<leader>dk", function()
     vim.diagnostic.open_float(nil, {
