@@ -30,7 +30,7 @@ return {
                 },
             },
         })
-        telescope.load_extension("fzf")
+        pcall(telescope.load_extension, "fzf")
     end,
     keys = {
         -- Find
@@ -50,6 +50,7 @@ return {
         -- Grep
         { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
         { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
+        { "<leader>ft", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme" },
         {
             "<leader>sw",
             "<cmd>Telescope grep_string<cr>",
