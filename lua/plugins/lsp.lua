@@ -17,6 +17,7 @@ return {
     opts = {
         servers = {
             lua_ls = {},
+            c3_lsp = {},
             clangd = {
                 root_markers = {
                     "compile_commands.json",
@@ -102,6 +103,7 @@ return {
                 "marksman",
                 "neocmake",
                 "gopls",
+                "rust_analyzer",
                 "pyright",
                 "asm_lsp",
                 -- kotlin_lsp is excluded here as we use system-installed version

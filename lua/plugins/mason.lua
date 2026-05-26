@@ -23,6 +23,8 @@ return {
                 "taplo",
                 -- Assembly
                 "asm-lsp",
+                -- Rust
+                "rust-analyzer",
                 -- Debug adapters
                 "codelldb",
                 "debugpy",

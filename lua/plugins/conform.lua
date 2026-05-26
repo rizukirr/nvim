@@ -24,6 +24,7 @@ return {
             yaml = { "prettier" },
             toml = { "taplo" },
             go = { "gofmt" },
+            rust = { "rustfmt" },
         },
         formatters = {
             clang_format = {

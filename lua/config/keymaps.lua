@@ -90,12 +90,12 @@ end, { desc = "Prev Diagnostic" })
 
 keymap.set("n", "<leader>dk", function()
     vim.diagnostic.open_float(nil, {
-        focusable = false,
+        focusable = true,
         close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
         border = "rounded",
         source = "if_many",
         prefix = " ",
-        scope = "cursor",
+        scope = "line",
     })
 end, { desc = "Show Diagnostic Float" })
 
