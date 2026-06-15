@@ -53,7 +53,6 @@ return {
             },
             bashls = {},
             marksman = {},
-            gopls = {},
             neocmake = {},
             rust_analyzer = { enabled = false },
             ruff = {
@@ -102,7 +101,6 @@ return {
                 "bashls",
                 "marksman",
                 "neocmake",
-                "gopls",
                 "rust_analyzer",
                 "pyright",
                 "asm_lsp",
